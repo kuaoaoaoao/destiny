@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://fence001"]
+
+[ext_resource type="Script" path="res://scripts/world/Decoration.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_collision"]
+size = Vector2(16, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shadow"]
+size = Vector2(18, 3)
+
+[node name="Fence" type="StaticBody2D" groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_script")
+decoration_name = "栅栏"
+decoration_type = "fence"
+has_collision = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+offset = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_collision")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.1)
+position = Vector2(0, 1)

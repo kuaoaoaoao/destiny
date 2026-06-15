@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://home001"]
+
+[ext_resource type="Script" path="res://scripts/world/Building.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/objects/buildings/walls.png" id="2_walls"]
+[ext_resource type="Texture2D" path="res://assets/objects/buildings/roof.png" id="3_roof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_collision"]
+size = Vector2(48, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(16, 8)
+
+[node name="Home" type="StaticBody2D" groups=["interactable", "building"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_script")
+building_name = "家"
+building_id = "home"
+
+[node name="WallSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_walls")
+offset = Vector2(0, -16)
+
+[node name="RoofSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_roof")
+offset = Vector2(0, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_collision")
+
+[node name="DoorArea" type="Area2D" parent="."]
+position = Vector2(0, 24)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+shape = SubResource("RectangleShape2D_door")
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -50.0
+offset_right = 20.0
+offset_bottom = -35.0
+text = "家"
+horizontal_alignment = 1

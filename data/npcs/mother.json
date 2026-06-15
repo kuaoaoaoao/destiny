@@ -1,0 +1,66 @@
+{
+  "npc_id": "mother",
+  "name": "妈妈",
+  "gender": "female",
+  "archetype": "parent",
+  "description": "你的母亲。操劳一生，最大的心愿是你过得好。",
+  "versions": {
+    "A": {
+      "name": "健康长寿",
+      "weight": 50,
+      "timeline": [
+        {"age": 0, "event": "出生", "encounter": "direct", "description": "妈妈抱着你，眼里全是温柔"},
+        {"age": 7, "event": "上学", "encounter": "direct", "location": "home", "description": "妈妈给你缝了个新书包，送你到村口"},
+        {"age": 12, "event": "做饭", "encounter": "direct", "location": "home", "description": "妈妈在厨房忙活，做了你最爱吃的红烧肉"},
+        {"age": 18, "event": "高考", "encounter": "direct", "location": "home", "description": "妈妈早早起来做早饭，说：'别紧张，考不好也没关系。'"},
+        {"age": 22, "event": "毕业", "encounter": "direct", "location": "home", "description": "妈妈站在门口等你，头发白了不少"},
+        {"age": 28, "event": "过年", "encounter": "direct", "location": "home", "description": "妈妈一直给你夹菜，说：'瘦了，在外面要照顾好自己。'"}
+      ]
+    },
+    "B": {
+      "name": "中年患病",
+      "weight": 30,
+      "timeline": [
+        {"age": 0, "event": "出生", "encounter": "direct", "description": "妈妈抱着你，眼里全是温柔"},
+        {"age": 35, "event": "生病", "encounter": "heard", "description": "听说妈妈身体不太好"},
+        {"age": 40, "event": "住院", "encounter": "direct", "location": "hospital", "description": "妈妈躺在病床上，笑着说：'没事，小毛病。'"}
+      ]
+    },
+    "C": {
+      "name": "过劳早逝",
+      "weight": 20,
+      "timeline": [
+        {"age": 0, "event": "出生", "encounter": "direct", "description": "妈妈抱着你，眼里全是温柔"},
+        {"age": 30, "event": "劳累", "encounter": "direct", "location": "home", "description": "妈妈总说不累，但你看到她偷偷捶腰"},
+        {"age": 45, "event": "离世", "encounter": "direct", "description": "妈妈在一个安静的下午离开了。你握着她的手，说不出话。"}
+      ]
+    }
+  },
+  "default_schedule": {
+    "childhood": {
+      "morning": "home",
+      "noon": "home",
+      "afternoon": "home",
+      "evening": "home",
+      "night": "home"
+    }
+  },
+  "dialogues": {
+    "greeting_childhood": [
+      "饿不饿？妈给你做饭。",
+      "作业写完了吗？",
+      "今天在学校乖不乖？",
+      "别跑太远，早点回来。"
+    ],
+    "greeting_teen": [
+      "好好学习，别操心家里的事。",
+      "你爸来电话了，问你成绩。",
+      "妈给你炖了鸡汤，补补脑子。"
+    ],
+    "greeting_young": [
+      "在外面照顾好自己。",
+      "什么时候带个对象回来？",
+      "别太累了，身体要紧。"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+	"npc_id": "xiaofang",
+	"npc_name": "小芳",
+	"dialogues": {
+		"childhood": {
+			"age_range": [7, 12],
+			"text": "你好...今天天气真好。",
+			"options": [
+				{"text": "是啊，出来走走", "effects": {"social": 3}},
+				{"text": "嗯", "effects": {}},
+				{"text": "你喜欢什么花？", "effects": {"social": 5}}
+			]
+		},
+		"teen": {
+			"age_range": [12, 18],
+			"text": "最近学习怎么样？",
+			"options": [
+				{"text": "还行吧", "effects": {"education": 3}},
+				{"text": "有点累", "effects": {"psychology": -3}},
+				{"text": "你呢？", "effects": {"social": 5}}
+			]
+		},
+		"adult": {
+			"age_range": [18, 100],
+			"text": "好久不见...你还好吗？",
+			"options": [
+				{"text": "挺好的", "effects": {"social": 5}},
+				{"text": "你呢？", "effects": {"social": 8}},
+				{"text": "有点迷茫", "effects": {"psychology": -5}}
+			]
+		},
+		"rainy": {
+			"text": "下雨了...你喜欢雨天吗？",
+			"options": [
+				{"text": "喜欢", "effects": {"psychology": 3}},
+				{"text": "不太喜欢", "effects": {}},
+				{"text": "和你一起就喜欢", "effects": {"social": 10}}
+			]
+		},
+		"morning": {
+			"text": "早上好！今天天气真好。",
+			"options": [
+				{"text": "是啊", "effects": {"psychology": 3}},
+				{"text": "你今天真好看", "effects": {"social": 8}}
+			]
+		},
+		"evening": {
+			"text": "天快黑了...",
+			"options": [
+				{"text": "我送你回家", "effects": {"social": 5, "family": 3}},
+				{"text": "是啊", "effects": {}}
+			]
+		}
+	}
+}

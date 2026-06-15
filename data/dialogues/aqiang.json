@@ -1,0 +1,30 @@
+{
+	"npc_id": "aqiang",
+	"npc_name": "阿强",
+	"dialogues": {
+		"childhood": {
+			"age_range": [7, 12],
+			"text": "我今天帮爸爸搬了好多东西！",
+			"options": [
+				{"text": "你真厉害！", "effects": {"social": 3}},
+				{"text": "我也来帮忙", "effects": {"social": 5, "health": -3}}
+			]
+		},
+		"teen": {
+			"age_range": [12, 18],
+			"text": "我要好好学习，将来让爸妈过上好日子。",
+			"options": [
+				{"text": "一起加油！", "effects": {"education": 3, "social": 3}},
+				{"text": "你压力太大了", "effects": {"psychology": 3}}
+			]
+		},
+		"adult": {
+			"age_range": [18, 100],
+			"text": "我去当兵了，保家卫国！",
+			"options": [
+				{"text": "为你骄傲！", "effects": {"social": 5}},
+				{"text": "要注意安全", "effects": {"psychology": 3}}
+			]
+		}
+	}
+}

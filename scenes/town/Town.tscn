@@ -1,0 +1,162 @@
+[gd_scene load_steps=4 format=3 uid="uid://town001"]
+
+[ext_resource type="Script" path="res://scripts/world/Town.gd" id="1_town"]
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/npc/NPC.tscn" id="3_npc"]
+
+[node name="Town" type="Node2D"]
+script = ExtResource("1_town")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.96, 0.94, 0.88, 1)
+
+[node name="Ground" type="TileMapLayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(640, 360)
+
+[node name="OldTree" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(400, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OldTree"]
+
+[node name="Sprite" type="ColorRect" parent="OldTree"]
+offset_left = -24.0
+offset_top = -48.0
+offset_right = 24.0
+offset_bottom = 0.0
+color = Color(0.4, 0.26, 0.13, 1)
+
+[node name="Label" type="Label" parent="OldTree"]
+offset_left = -30.0
+offset_top = -60.0
+offset_right = 30.0
+offset_bottom = -45.0
+text = "老槐树"
+horizontal_alignment = 1
+
+[node name="School" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(800, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="School"]
+
+[node name="Sprite" type="ColorRect" parent="School"]
+offset_left = -48.0
+offset_top = -32.0
+offset_right = 48.0
+offset_bottom = 32.0
+color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="Label" type="Label" parent="School"]
+offset_left = -30.0
+offset_top = -45.0
+offset_right = 30.0
+offset_bottom = -30.0
+text = "学校"
+horizontal_alignment = 1
+
+[node name="Shop" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(900, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop"]
+
+[node name="Sprite" type="ColorRect" parent="Shop"]
+offset_left = -32.0
+offset_top = -24.0
+offset_right = 32.0
+offset_bottom = 24.0
+color = Color(0.9, 0.7, 0.4, 1)
+
+[node name="Label" type="Label" parent="Shop"]
+offset_left = -30.0
+offset_top = -35.0
+offset_right = 30.0
+offset_bottom = -20.0
+text = "小卖部"
+horizontal_alignment = 1
+
+[node name="Home" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(200, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Home"]
+
+[node name="Sprite" type="ColorRect" parent="Home"]
+offset_left = -40.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 32.0
+color = Color(0.7, 0.5, 0.3, 1)
+
+[node name="Label" type="Label" parent="Home"]
+offset_left = -30.0
+offset_top = -45.0
+offset_right = 30.0
+offset_bottom = -30.0
+text = "家"
+horizontal_alignment = 1
+
+[node name="NPC_Xiaogang" parent="." instance=ExtResource("3_npc")]
+position = Vector2(500, 350)
+npc_id = "xiaogang"
+npc_name = "小刚"
+
+[node name="NPC_Xiaofang" parent="." instance=ExtResource("3_npc")]
+position = Vector2(350, 250)
+npc_id = "xiaofang"
+npc_name = "小芳"
+
+[node name="NPC_Dazhuang" parent="." instance=ExtResource("3_npc")]
+position = Vector2(850, 380)
+npc_id = "dazhuang"
+npc_name = "大壮"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="TimeLabel" type="Label" parent="HUD/MarginContainer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 30.0
+text = "06:00"
+
+[node name="AgeLabel" type="Label" parent="HUD/MarginContainer"]
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 150.0
+offset_bottom = 55.0
+text = "年龄: 7岁"
+
+[node name="LocationLabel" type="Label" parent="HUD/MarginContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 10.0
+offset_right = 75.0
+offset_bottom = 30.0
+text = "小镇"
+horizontal_alignment = 1
+
+[node name="InteractionHint" type="Label" parent="HUD/MarginContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 75.0
+offset_bottom = -10.0
+text = "按空格键交互"
+visible = false
+horizontal_alignment = 1

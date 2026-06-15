@@ -1,0 +1,115 @@
+{
+  "endings": {
+    "ordinary_life": {
+      "name": "平凡一生",
+      "conditions": {
+        "money": [30, 60],
+        "mental": [40, 60],
+        "health": [40, 60],
+        "social": [30, 60],
+        "happiness": [50, 70]
+      },
+      "evaluation": "平凡但完整",
+      "description": "你过完了普通人的一生。没有大起大落，没有惊天动地。但你有家人、有朋友、有回忆。这就够了。",
+      "ending_cg": "ending_ordinary"
+    },
+    "success_story": {
+      "name": "逆袭人生",
+      "conditions": {
+        "money": [70, 100],
+        "education": [60, 100],
+        "happiness": [50, 80]
+      },
+      "evaluation": "从泥泞中走出来",
+      "description": "你从贫困的家庭走出来，靠自己的努力改变了命运。你有了体面的工作、稳定的收入、让人羡慕的生活。但你偶尔会想起小时候的那个自己。",
+      "ending_cg": "ending_success"
+    },
+    "lonely_heart": {
+      "name": "孤独终老",
+      "conditions": {
+        "social": [0, 20],
+        "mental": [20, 50],
+        "happiness": [20, 40]
+      },
+      "evaluation": "一个人走完了全程",
+      "description": "你没有朋友，没有家人陪伴。你一个人吃饭、一个人看电视、一个人过年。你习惯了孤独，但偶尔会想，如果当初多说几句话，会不会不一样？",
+      "ending_cg": "ending_lonely"
+    },
+    "broken_body": {
+      "name": "透支生命",
+      "conditions": {
+        "health": [0, 20],
+        "money": [50, 100]
+      },
+      "evaluation": "有钱没命花",
+      "description": "你拼命工作，赚了不少钱。但身体垮了。你躺在病床上，看着窗外的阳光，突然想起小时候在河边抓鱼的那个下午。",
+      "ending_cg": "ending_broken"
+    },
+    "happy_family": {
+      "name": "阖家幸福",
+      "conditions": {
+        "social": [60, 100],
+        "happiness": [60, 100],
+        "money": [30, 70]
+      },
+      "evaluation": "家人就是最大的财富",
+      "description": "你没有大富大贵，但你有温暖的家。孩子在院子里跑，爱人在厨房忙活，爸妈在门口晒太阳。你看着这一切，觉得这辈子值了。",
+      "ending_cg": "ending_family"
+    },
+    "mental_break": {
+      "name": "心灵崩塌",
+      "conditions": {
+        "mental": [0, 20],
+        "happiness": [0, 30]
+      },
+      "evaluation": "被生活压垮了",
+      "description": "你不知道从什么时候开始，笑容变得勉强。你不想出门，不想说话，不想见人。世界变得灰蒙蒙的，像永远散不去的雾。",
+      "ending_cg": "ending_break"
+    },
+    "regret": {
+      "name": "满是遗憾",
+      "conditions": {
+        "happiness": [30, 50],
+        "mental": [30, 50],
+        "social": [20, 40]
+      },
+      "evaluation": "如果能重来就好了",
+      "description": "你总是想，如果当初选了另一条路，会不会不一样？如果当初多陪陪小刚，如果当初对小芳说了那句话，如果当初多回几次家……但人生没有如果。",
+      "ending_cg": "ending_regret"
+    },
+    "peaceful_end": {
+      "name": "平静离世",
+      "conditions": {
+        "happiness": [50, 70],
+        "mental": [50, 70],
+        "health": [20, 50]
+      },
+      "evaluation": "走得安详",
+      "description": "你在一个阳光明媚的下午，安静地离开了这个世界。窗外的树叶在风中摇曳，像小时候老家院子里的那棵。你闭上眼睛，嘴角带着笑。",
+      "ending_cg": "ending_peaceful"
+    },
+    "fighter": {
+      "name": "不屈人生",
+      "conditions": {
+        "mental": [40, 60],
+        "health": [20, 40],
+        "money": [10, 30],
+        "happiness": [40, 60]
+      },
+      "evaluation": "被打倒了，但又站起来",
+      "description": "生活一次次把你打倒，但你一次次站起来。你没有赢，但你也没有输。你只是活着，用尽全力地活着。",
+      "ending_cg": "ending_fighter"
+    },
+    "wisdom": {
+      "name": "看透人生",
+      "conditions": {
+        "happiness": [60, 80],
+        "mental": [60, 80],
+        "social": [40, 60]
+      },
+      "evaluation": "终于明白了",
+      "description": "你经历了太多，终于明白：人生没有标准答案，只有你的答案。你不再羡慕别人，不再后悔过去。你只是安静地活着，珍惜每一天。",
+      "ending_cg": "ending_wisdom"
+    }
+  }
+}

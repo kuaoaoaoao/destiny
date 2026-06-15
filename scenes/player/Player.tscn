@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://player001"]
+
+[ext_resource type="Script" path="res://scripts/world/Player.gd" id="1_player"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/player_basic.png" id="2_texture"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_interaction"]
+size = Vector2(24, 24)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_player")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_texture")
+hframes = 33
+vframes = 4
+frame = 0
+offset = Vector2(0, -24)
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 960
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_interaction")

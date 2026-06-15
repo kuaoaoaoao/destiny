@@ -1,0 +1,28 @@
+{
+  "id": "xiaogang",
+  "name": "小刚",
+  "description": "童年的伙伴，贫困家庭出身",
+  "schedule": {
+    "childhood": {
+      "morning": {"location": "home", "behavior": "playing"},
+      "afternoon": {"location": "school", "behavior": "studying"},
+      "evening": {"location": "old_tree", "behavior": "chatting"},
+      "night": {"location": "home", "behavior": "sleeping"}
+    },
+    "teen": {
+      "morning": {"location": "school", "behavior": "studying"},
+      "afternoon": {"location": "school", "behavior": "studying"},
+      "evening": {"location": "old_tree", "behavior": "secret"},
+      "night": {"location": "home", "behavior": "sleeping"}
+    }
+  },
+  "dialogues": {
+    "greeting": [
+      {"text": "嘿！你来啦！", "effects": {}},
+      {"text": "今天天气真好啊。", "effects": {}}
+    ],
+    "farewell": [
+      {"text": "我先走了，明天见！", "effects": {}}
+    ]
+  }
+}

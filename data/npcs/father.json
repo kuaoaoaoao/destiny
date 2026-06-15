@@ -1,0 +1,68 @@
+{
+  "npc_id": "father",
+  "name": "爸爸",
+  "gender": "male",
+  "archetype": "parent",
+  "description": "你的父亲。沉默寡言，但用自己的方式爱你。",
+  "versions": {
+    "A": {
+      "name": "外出打工",
+      "weight": 40,
+      "timeline": [
+        {"age": 0, "event": "出生", "encounter": "heard", "description": "爸爸在外地打工，没能回来"},
+        {"age": 7, "event": "过年回来", "encounter": "direct", "location": "home", "description": "爸爸从外地回来了，带了一箱橘子"},
+        {"age": 12, "event": "电话", "encounter": "heard", "description": "爸爸打电话问你成绩"},
+        {"age": 18, "event": "高考", "encounter": "heard", "description": "爸爸在电话那头沉默了很久，然后说：'好样的。'"},
+        {"age": 22, "event": "老了", "encounter": "direct", "location": "home", "description": "爸爸头发白了不少，背也驼了"}
+      ]
+    },
+    "B": {
+      "name": "在家种地",
+      "weight": 30,
+      "timeline": [
+        {"age": 0, "event": "出生", "encounter": "direct", "description": "爸爸在院子里抽烟，看到你笑了"},
+        {"age": 7, "event": "送上学", "encounter": "direct", "location": "home", "description": "爸爸骑自行车送你上学"},
+        {"age": 18, "event": "高考", "encounter": "direct", "location": "home", "description": "爸爸说：'考不好就回来种地。'但你知道他希望你走出去。"}
+      ]
+    },
+    "C": {
+      "name": "出事故",
+      "weight": 15,
+      "timeline": [
+        {"age": 0, "event": "出生", "encounter": "heard", "description": "爸爸在外地打工"},
+        {"age": 12, "event": "出事", "encounter": "heard", "description": "听说爸爸在工地出了事故"},
+        {"age": 15, "event": "残疾", "encounter": "direct", "location": "home", "description": "爸爸回来了，但少了两根手指。他说：'没事，还能干活。'"}
+      ]
+    },
+    "D": {
+      "name": "离家出走",
+      "weight": 15,
+      "timeline": [
+        {"age": 0, "event": "出生", "encounter": "heard", "description": "爸爸在你出生后就走了"},
+        {"age": 7, "event": "问起", "encounter": "direct", "location": "home", "description": "你问妈妈：'爸爸呢？'妈妈不说话。"},
+        {"age": 18, "event": "消息", "encounter": "heard", "description": "听说爸爸在南方又成了家"}
+      ]
+    }
+  },
+  "default_schedule": {
+    "childhood": {
+      "morning": "home",
+      "noon": "home",
+      "afternoon": "home",
+      "evening": "home",
+      "night": "home"
+    }
+  },
+  "dialogues": {
+    "greeting_childhood": [
+      "好好读书。",
+      "听你妈的话。",
+      "爸不在家，你要照顾好自己。"
+    ],
+    "greeting_teen": [
+      "考得怎么样？",
+      "别学坏。",
+      "爸没本事，你得靠自己。"
+    ]
+  }
+}

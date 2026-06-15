@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://hud001"]
+
+[ext_resource type="Script" path="res://scripts/ui/HUD.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="TopBar" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/TopBar"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 28.0
+text = "☀️ 06:00 早晨"
+
+[node name="AgeLabel" type="Label" parent="MarginContainer/TopBar"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 15.0
+offset_top = 28.0
+offset_right = 200.0
+offset_bottom = 48.0
+text = "7 岁"
+
+[node name="LocationLabel" type="Label" parent="MarginContainer/TopBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 15.0
+offset_right = 50.0
+offset_bottom = 35.0
+text = "小镇"
+horizontal_alignment = 1
+
+[node name="DayLabel" type="Label" parent="MarginContainer/TopBar"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 35.0
+text = "第 1 天"
+horizontal_alignment = 2
+
+[node name="InteractionHint" type="Label" parent="MarginContainer"]
+layout_mode = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = -20.0
+text = "[ 空格 ] 互动"
+visible = false
+horizontal_alignment = 1
+
+[node name="NotificationLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 85.0
+text = "通知"
+visible = false
+horizontal_alignment = 1

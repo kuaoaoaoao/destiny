@@ -1,0 +1,30 @@
+{
+	"npc_id": "xiaomei",
+	"npc_name": "小美",
+	"dialogues": {
+		"childhood": {
+			"age_range": [7, 12],
+			"text": "......",
+			"options": [
+				{"text": "你好", "effects": {"social": 3}},
+				{"text": "一起玩吗？", "effects": {"social": 5, "psychology": 3}}
+			]
+		},
+		"teen": {
+			"age_range": [12, 18],
+			"text": "我要照顾弟弟，没时间玩。",
+			"options": [
+				{"text": "我帮你", "effects": {"social": 5, "family": 3}},
+				{"text": "那你忙吧", "effects": {}}
+			]
+		},
+		"adult": {
+			"age_range": [18, 100],
+			"text": "我结婚了，在镇上开了小店。",
+			"options": [
+				{"text": "恭喜！", "effects": {"social": 5}},
+				{"text": "生活还好吗？", "effects": {"social": 3}}
+			]
+		}
+	}
+}

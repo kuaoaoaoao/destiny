@@ -1,0 +1,30 @@
+{
+	"npc_id": "lili",
+	"npc_name": "莉莉",
+	"dialogues": {
+		"childhood": {
+			"age_range": [7, 12],
+			"text": "我爸爸给我买了新书包！",
+			"options": [
+				{"text": "真好看！", "effects": {"social": 3}},
+				{"text": "我的也不错", "effects": {"psychology": 1}}
+			]
+		},
+		"teen": {
+			"age_range": [12, 18],
+			"text": "我以后要考清华！",
+			"options": [
+				{"text": "我也想考", "effects": {"education": 5}},
+				{"text": "加油！", "effects": {"social": 3}}
+			]
+		},
+		"adult": {
+			"age_range": [18, 100],
+			"text": "我在大城市工作了，生活还不错。",
+			"options": [
+				{"text": "恭喜你！", "effects": {"social": 5}},
+				{"text": "我也想去大城市", "effects": {"psychology": 3}}
+			]
+		}
+	}
+}

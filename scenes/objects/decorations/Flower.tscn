@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://flower001"]
+
+[ext_resource type="Script" path="res://scripts/world/Decoration.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shadow"]
+size = Vector2(12, 3)
+
+[node name="Flower" type="StaticBody2D" groups=["interactable"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_script")
+decoration_name = "花丛"
+decoration_type = "flower"
+has_collision = false
+
+[node name="Sprite" type="Sprite2D" parent="."]
+offset = Vector2(0, -6)
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.1)
+position = Vector2(0, 1)

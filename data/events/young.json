@@ -1,0 +1,386 @@
+{
+  "events": {
+    "Y001": {
+      "name": "大学开学",
+      "stage": "young",
+      "priority": 1,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 18,
+        "once": true
+      },
+      "narrative": "大学开学了。你第一次离开家乡，来到一个陌生的城市。宿舍里有三个室友，一个来自城市，两个来自农村。你看着窗外的高楼大厦，突然觉得世界好大。",
+      "choices": [
+        {
+          "text": "主动和室友打招呼",
+          "effects": {"social": 10, "mental": 5},
+          "flags": ["made_roommates"]
+        },
+        {
+          "text": "安静地整理床铺",
+          "effects": {"mental": -3},
+          "flags": ["quiet_in_dorm"]
+        }
+      ]
+    },
+    "Y002": {
+      "name": "第一次兼职",
+      "stage": "young",
+      "priority": 5,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 19,
+        "once": true
+      },
+      "narrative": "你在学校附近的快餐店找到了一份兼职。一小时15块钱，端盘子、擦桌子。第一天下来，你的脚疼得走不动路。",
+      "choices": [
+        {
+          "text": "坚持干下去",
+          "effects": {"money": 15, "health": -5, "mental": -3},
+          "flags": ["first_job_done"]
+        },
+        {
+          "text": "太累了，辞职",
+          "effects": {"mental": -5, "money": -5},
+          "flags": ["first_job_quit"]
+        }
+      ]
+    },
+    "Y003": {
+      "name": "室友的影响",
+      "stage": "young",
+      "priority": 8,
+      "trigger": {
+        "type": "location",
+        "location": "dorm",
+        "stage": "young",
+        "age_range": [18, 22],
+        "conditions": [
+          {"type": "flag", "flag": "made_roommates"}
+        ],
+        "once": true
+      },
+      "narrative": "室友拉你去网吧打游戏。你犹豫了一下，但还是去了。通宵打游戏的感觉很爽，但第二天的课你完全听不进去。",
+      "choices": [
+        {
+          "text": "偶尔去放松一下",
+          "effects": {"social": 5, "education": -5, "mental": 3},
+          "flags": ["gaming_habit"]
+        },
+        {
+          "text": "拒绝，去图书馆学习",
+          "effects": {"education": 10, "social": -3, "mental": 2},
+          "flags": ["study_hard_college"]
+        }
+      ]
+    },
+    "Y004": {
+      "name": "小刚来信",
+      "stage": "young",
+      "priority": 10,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 20,
+        "conditions": [
+          {"type": "flag", "flag": "replied_to_xiaogang"}
+        ],
+        "once": true
+      },
+      "narrative": "你又收到小刚的信。他说他攒了点钱，准备回老家开个小店。他说：'你在大学好好学，以后出息了，咱们还能一起喝酒。'",
+      "choices": [
+        {
+          "text": "回信鼓励他",
+          "effects": {"social": 8, "mental": 5},
+          "npc_effects": {"xiaogang": {"affinity": 10}},
+          "flags": ["encouraged_xiaogang"]
+        },
+        {
+          "text": "忙着考试，没回",
+          "effects": {"mental": -2},
+          "npc_effects": {"xiaogang": {"affinity": -5}}
+        }
+      ]
+    },
+    "Y005": {
+      "name": "实习面试",
+      "stage": "young",
+      "priority": 3,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 21,
+        "once": true
+      },
+      "narrative": "大三暑假，你投了十几份简历，终于收到一个面试通知。你穿着借来的西装，走进写字楼。面试官问了你一堆问题，你紧张得手心冒汗。",
+      "choices": [
+        {
+          "text": "尽力回答",
+          "effects": {"education": 5, "mental": -5, "money": 10},
+          "flags": ["got_internship"]
+        },
+        {
+          "text": "太紧张了，发挥失常",
+          "effects": {"mental": -10},
+          "flags": ["failed_interview"]
+        }
+      ]
+    },
+    "Y006": {
+      "name": "毕业迷茫",
+      "stage": "young",
+      "priority": 1,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 22,
+        "once": true
+      },
+      "narrative": "毕业了。你拿着简历，站在人才市场的门口。到处都是和你一样的年轻人，穿着廉价的西装，眼里带着迷茫。你突然不知道，这几年的大学到底学了什么。",
+      "choices": [
+        {
+          "text": "先找份工作再说",
+          "effects": {"money": 15, "mental": -5},
+          "flags": ["took_first_job"]
+        },
+        {
+          "text": "考研，再读几年",
+          "effects": {"education": 15, "money": -10, "mental": -5},
+          "flags": ["chose_graduate"]
+        },
+        {
+          "text": "回老家，不想漂了",
+          "effects": {"mental": 5, "money": 5},
+          "flags": ["went_back_home"]
+        }
+      ]
+    },
+    "Y007": {
+      "name": "第一份正式工作",
+      "stage": "young",
+      "priority": 2,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 22,
+        "conditions": [
+          {"type": "flag", "flag": "took_first_job"}
+        ],
+        "once": true
+      },
+      "narrative": "你入职了一家公司。工资不高，但至少能养活自己了。你租了一间小小的出租屋，每天挤地铁上班。日子忙碌而单调。",
+      "choices": [
+        {
+          "text": "努力工作，争取升职",
+          "effects": {"money": 10, "education": 5, "health": -5, "mental": -3},
+          "flags": ["hard_worker"]
+        },
+        {
+          "text": "混日子，准时下班",
+          "effects": {"mental": 5, "money": 3},
+          "flags": ["coasting_worker"]
+        }
+      ]
+    },
+    "Y008": {
+      "name": "相亲",
+      "stage": "young",
+      "priority": 6,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 25,
+        "conditions": [
+          {"type": "stat", "stat": "social", "op": ">", "value": 30}
+        ],
+        "once": true
+      },
+      "narrative": "妈妈打电话来，说给你介绍了个对象。你加了对方微信，聊了几天。对方是个小学老师，照片看起来挺温柔的。",
+      "choices": [
+        {
+          "text": "约出来见面",
+          "effects": {"social": 8, "mental": 3},
+          "flags": ["blind_date_yes"]
+        },
+        {
+          "text": "算了，不想相亲",
+          "effects": {"mental": -3},
+          "flags": ["blind_date_no"]
+        }
+      ]
+    },
+    "Y009": {
+      "name": "相亲见面",
+      "stage": "young",
+      "priority": 5,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 25,
+        "conditions": [
+          {"type": "flag", "flag": "blind_date_yes"}
+        ],
+        "once": true
+      },
+      "narrative": "你们约在一家咖啡店。对方比照片上瘦一些，说话轻声细语。你们聊了两个小时，从工作聊到家乡，从爱好聊到未来。",
+      "choices": [
+        {
+          "text": "感觉不错，继续发展",
+          "effects": {"social": 10, "mental": 8, "happiness": 5},
+          "flags": ["dating_started"]
+        },
+        {
+          "text": "没感觉，算了",
+          "effects": {"mental": -3},
+          "flags": ["dating_rejected"]
+        }
+      ]
+    },
+    "Y010": {
+      "name": "加班到深夜",
+      "stage": "young",
+      "priority": 7,
+      "trigger": {
+        "type": "location",
+        "location": "office",
+        "stage": "young",
+        "age_range": [22, 28],
+        "conditions": [
+          {"type": "flag", "flag": "hard_worker"}
+        ],
+        "once": true
+      },
+      "narrative": "又加班到凌晨两点。办公室里只剩下你一个人，显示器的光照在脸上。你揉了揉眼睛，看着窗外的夜景，突然不知道自己在拼什么。",
+      "choices": [
+        {
+          "text": "继续干，为了升职",
+          "effects": {"money": 10, "health": -8, "mental": -10},
+          "flags": ["overwork"]
+        },
+        {
+          "text": "辞职，换个轻松的工作",
+          "effects": {"mental": 8, "money": -10},
+          "flags": ["quit_hard_job"]
+        }
+      ]
+    },
+    "Y011": {
+      "name": "过年回家",
+      "stage": "young",
+      "priority": 2,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 23,
+        "once": true
+      },
+      "narrative": "过年了，你回到老家。妈妈在门口等你，爸爸在厨房忙活。你发现他们老了，头发白了不少。吃饭的时候，妈妈一直给你夹菜，说：'瘦了，在外面要照顾好自己。'",
+      "choices": [
+        {
+          "text": "陪爸妈多待几天",
+          "effects": {"social": 10, "mental": 10, "happiness": 8},
+          "flags": ["stayed_with_parents"]
+        },
+        {
+          "text": "初三就走，公司还有事",
+          "effects": {"money": 5, "mental": -5, "social": -5},
+          "flags": ["left_early"]
+        }
+      ]
+    },
+    "Y012": {
+      "name": "小刚回来了",
+      "stage": "young",
+      "priority": 8,
+      "trigger": {
+        "type": "location",
+        "location": "town_square",
+        "stage": "young",
+        "age_range": [23, 28],
+        "conditions": [
+          {"type": "flag", "flag": "xiaogang_left_with_gift"}
+        ],
+        "once": true
+      },
+      "narrative": "你在镇上遇到了小刚。他黑了瘦了，但精神不错。他说他在镇上开了个小五金店，生意还行。他拍了拍你的肩膀：'大学生，出息了啊！'",
+      "choices": [
+        {
+          "text": "请他吃饭，叙叙旧",
+          "effects": {"social": 10, "mental": 8, "money": -5},
+          "npc_effects": {"xiaogang": {"affinity": 15}},
+          "flags": ["reunion_with_xiaogang"]
+        },
+        {
+          "text": "聊几句就走了",
+          "effects": {"social": 3, "mental": 2},
+          "npc_effects": {"xiaogang": {"affinity": 3}}
+        }
+      ]
+    },
+    "Y013": {
+      "name": "结婚",
+      "stage": "young",
+      "priority": 1,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 28,
+        "conditions": [
+          {"type": "flag", "flag": "dating_started"}
+        ],
+        "once": true
+      },
+      "narrative": "你结婚了。婚礼不大，但很温馨。妈妈哭了好几次，爸爸喝了不少酒。你看着身边的人，突然觉得，这辈子好像就这样了。",
+      "choices": [
+        {
+          "text": "觉得幸福",
+          "effects": {"happiness": 15, "social": 10, "mental": 10},
+          "flags": ["married_happy"]
+        },
+        {
+          "text": "觉得迷茫",
+          "effects": {"mental": -5, "happiness": 3},
+          "flags": ["married_confused"]
+        }
+      ]
+    },
+    "Y014": {
+      "name": "父亲生病",
+      "stage": "young",
+      "priority": 3,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 27,
+        "once": true
+      },
+      "narrative": "妈妈打电话来，说爸爸住院了。你请了假，赶回老家。爸爸躺在病床上，看到你来了，笑着说：'没事，小毛病。'但你看到他瘦了一圈。",
+      "choices": [
+        {
+          "text": "请假照顾爸爸",
+          "effects": {"social": 10, "mental": -10, "money": -15},
+          "flags": ["cared_for_father"]
+        },
+        {
+          "text": "给了钱，回去上班",
+          "effects": {"money": -10, "mental": -5},
+          "flags": ["gave_money_only"]
+        }
+      ]
+    },
+    "Y015": {
+      "name": "青年阶段结束",
+      "stage": "young",
+      "priority": 1,
+      "trigger": {
+        "type": "milestone",
+        "target_age": 28,
+        "once": true
+      },
+      "narrative": "你站在镜子前，看着自己。脸上有了细纹，眼里少了些光。你突然想起小时候在河边抓鱼的那个下午，想起小刚的傻笑，想起小芳的酒窝。那些日子，再也回不去了。",
+      "choices": [
+        {
+          "text": "深吸一口气，继续往前走",
+          "effects": {"mental": 5, "happiness": 3},
+          "flags": ["youth_ended_accept"]
+        },
+        {
+          "text": "忍不住流下眼泪",
+          "effects": {"mental": -5, "happiness": -3},
+          "flags": ["youth_ended_cry"]
+        }
+      ]
+    }
+  }
+}

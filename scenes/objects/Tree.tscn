@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://tree001"]
+
+[ext_resource type="Script" path="res://scripts/world/Tree.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/objects/plants/tree.png" id="2_texture"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_collision"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shadow"]
+size = Vector2(16, 4)
+
+[node name="Tree" type="StaticBody2D" groups=["interactable", "tree"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_script")
+tree_name = "树"
+tree_type = "normal"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_texture")
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_collision")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 2)

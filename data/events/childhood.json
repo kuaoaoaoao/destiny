@@ -1,0 +1,204 @@
+{
+  "events": [
+    {
+      "id": "childhood_old_tree",
+      "name": "老槐树下的伙伴",
+      "trigger_type": "location",
+      "trigger_location": "OldTree",
+      "trigger_conditions": {
+        "age_range": [7, 12],
+        "time_period": "afternoon"
+      },
+      "dialogue": {
+        "speaker": "小刚",
+        "text": "嘿！你来啦！一起玩吗？",
+        "options": [
+          {"text": "好啊！", "effects": {"social": 5, "psychology": 5}},
+          {"text": "我先看看", "effects": {"psychology": 3}}
+        ]
+      },
+      "effects": {},
+      "one_time": false
+    },
+    {
+      "id": "childhood_bully",
+      "name": "操场角落",
+      "trigger_type": "location",
+      "trigger_location": "School",
+      "trigger_conditions": {
+        "age_range": [7, 12],
+        "time_period": "afternoon"
+      },
+      "dialogue": {
+        "speaker": "旁白",
+        "text": "你听到角落里传来哭声...",
+        "options": [
+          {"text": "走过去看看", "effects": {"psychology": -5, "social": 5}},
+          {"text": "装作没听到", "effects": {"psychology": 5}}
+        ]
+      },
+      "effects": {"psychology": -10},
+      "one_time": true
+    },
+    {
+      "id": "childhood_shop",
+      "name": "小卖部",
+      "trigger_type": "location",
+      "trigger_location": "Shop",
+      "trigger_conditions": {
+        "age_range": [7, 12],
+        "time_period": "morning"
+      },
+      "dialogue": {
+        "speaker": "大壮",
+        "text": "欢迎光临！今天想买点什么？",
+        "options": [
+          {"text": "买个冰棍", "effects": {"money": -5, "psychology": 5}},
+          {"text": "就看看", "effects": {}}
+        ]
+      },
+      "effects": {},
+      "one_time": false
+    },
+    {
+      "id": "childhood_exam",
+      "name": "期末考试",
+      "trigger_type": "location",
+      "trigger_location": "School",
+      "trigger_conditions": {
+        "age_range": [10, 12],
+        "time_period": "morning"
+      },
+      "dialogue": {
+        "speaker": "旁白",
+        "text": "期末考试到了，你准备好了吗？",
+        "options": [
+          {"text": "认真答题", "effects": {"education": 10, "psychology": -5}},
+          {"text": "随便写写", "effects": {"education": 3}}
+        ]
+      },
+      "effects": {},
+      "one_time": true
+    },
+    {
+      "id": "childhood_family_dinner",
+      "name": "家庭晚餐",
+      "trigger_type": "location",
+      "trigger_location": "Home",
+      "trigger_conditions": {
+        "age_range": [7, 12],
+        "time_period": "evening"
+      },
+      "dialogue": {
+        "speaker": "妈妈",
+        "text": "今天在学校怎么样？",
+        "options": [
+          {"text": "挺好的", "effects": {"family": 5, "psychology": 3}},
+          {"text": "不想说", "effects": {"family": -3}}
+        ]
+      },
+      "effects": {"family": 5},
+      "one_time": false
+    },
+    {
+      "id": "childhood_xiaogang_play",
+      "name": "和小刚玩耍",
+      "trigger_type": "npc",
+      "trigger_npc": "xiaogang",
+      "trigger_conditions": {
+        "age_range": [7, 10],
+        "time_period": "afternoon"
+      },
+      "dialogue": {
+        "speaker": "小刚",
+        "text": "我们去抓蜻蜓吧！",
+        "options": [
+          {"text": "好啊！", "effects": {"social": 5, "psychology": 5}},
+          {"text": "我要写作业", "effects": {"education": 3}}
+        ]
+      },
+      "effects": {},
+      "one_time": false
+    },
+    {
+      "id": "childhood_xiaofang_flower",
+      "name": "小芳的花",
+      "trigger_type": "npc",
+      "trigger_npc": "xiaofang",
+      "trigger_conditions": {
+        "age_range": [7, 10],
+        "time_period": "morning"
+      },
+      "dialogue": {
+        "speaker": "小芳",
+        "text": "你看，这朵花好漂亮！",
+        "options": [
+          {"text": "真的耶！", "effects": {"psychology": 3}},
+          {"text": "送给你", "effects": {"social": 5}}
+        ]
+      },
+      "effects": {},
+      "one_time": false
+    },
+    {
+      "id": "childhood_dad_work",
+      "name": "爸爸的工作",
+      "trigger_type": "location",
+      "trigger_location": "Home",
+      "trigger_conditions": {
+        "age_range": [8, 12],
+        "time_period": "night"
+      },
+      "dialogue": {
+        "speaker": "爸爸",
+        "text": "今天工作很累，但看到你就觉得值了。",
+        "options": [
+          {"text": "爸爸辛苦了", "effects": {"family": 5}},
+          {"text": "我想买新玩具", "effects": {"family": -3}}
+        ]
+      },
+      "effects": {},
+      "one_time": false
+    },
+    {
+      "id": "childhood_school_friend",
+      "name": "新同学",
+      "trigger_type": "location",
+      "trigger_location": "School",
+      "trigger_conditions": {
+        "age_range": [7, 8],
+        "time_period": "morning"
+      },
+      "dialogue": {
+        "speaker": "旁白",
+        "text": "班上来了一个新同学，看起来很害羞。",
+        "options": [
+          {"text": "主动打招呼", "effects": {"social": 5, "psychology": 3}},
+          {"text": "观察一下", "effects": {"psychology": 1}}
+        ]
+      },
+      "effects": {},
+      "one_time": true
+    },
+    {
+      "id": "childhood_lost_money",
+      "name": "丢钱",
+      "trigger_type": "location",
+      "trigger_location": "Shop",
+      "trigger_conditions": {
+        "age_range": [8, 12],
+        "time_period": "afternoon"
+      },
+      "dialogue": {
+        "speaker": "旁白",
+        "text": "你发现买冰棍的钱丢了...",
+        "options": [
+          {"text": "回家找妈妈", "effects": {"family": 3, "money": 5}},
+          {"text": "算了不买了", "effects": {"psychology": -3}}
+        ]
+      },
+      "effects": {},
+      "one_time": true
+    }
+  ]
+}

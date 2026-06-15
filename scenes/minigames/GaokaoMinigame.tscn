@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://gaokao001"]
+
+[ext_resource type="Script" path="res://scripts/minigames/GaokaoMinigame.gd" id="1_gk"]
+
+[node name="GaokaoMinigame" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1_gk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.1, 0.15, 0.95)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+
+[node name="SubjectLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "科目: 语文"
+horizontal_alignment = 1
+
+[node name="QuestionLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 60)
+text = "题目内容"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TimerLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "剩余时间: 15.0 秒"
+horizontal_alignment = 1
+
+[node name="ProgressLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "第 1 / 8 题"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.0
+one_shot = false
+
+[node name="ResultPanel" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultPanel"]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="ResultPanel/VBoxContainer"]
+layout_mode = 2
+text = "高考结束"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="ResultPanel/VBoxContainer"]
+layout_mode = 2
+text = "得分: 0"
+horizontal_alignment = 1

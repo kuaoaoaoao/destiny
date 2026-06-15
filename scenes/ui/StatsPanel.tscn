@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://stats001"]
+
+[ext_resource type="Script" path="res://scripts/ui/StatsPanel.gd" id="1_sp"]
+
+[node name="StatsPanel" type="PanelContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_top = 60.0
+offset_right = -10.0
+offset_bottom = 320.0
+script = ExtResource("1_sp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 0.7, 1)
+theme_override_font_sizes/font_size = 22
+text = "人生状态"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AgeLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "年龄: 7 岁"
+
+[node name="StageLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "阶段: 童年"
+
+[node name="BackgroundLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "出身: 乡村普通家庭"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Stats" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HealthBar" type="ProgressBar" parent="VBoxContainer/Stats"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 20)
+max_value = 100.0
+value = 80.0
+show_percentage = false
+
+[node name="PsychologyBar" type="ProgressBar" parent="VBoxContainer/Stats"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 20)
+max_value = 100.0
+value = 70.0
+show_percentage = false
+
+[node name="EducationBar" type="ProgressBar" parent="VBoxContainer/Stats"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 20)
+max_value = 100.0
+value = 30.0
+show_percentage = false
+
+[node name="MoneyBar" type="ProgressBar" parent="VBoxContainer/Stats"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 20)
+max_value = 100.0
+value = 40.0
+show_percentage = false
+
+[node name="SocialBar" type="ProgressBar" parent="VBoxContainer/Stats"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 20)
+max_value = 100.0
+value = 50.0
+show_percentage = false
+
+[node name="FamilyBar" type="ProgressBar" parent="VBoxContainer/Stats"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 20)
+max_value = 100.0
+value = 75.0
+show_percentage = false

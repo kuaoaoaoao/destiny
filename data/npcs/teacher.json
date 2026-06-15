@@ -1,0 +1,63 @@
+{
+  "npc_id": "teacher",
+  "name": "王老师",
+  "gender": "male",
+  "archetype": "mentor",
+  "description": "小学班主任。严厉但关心学生，是你童年的引路人。",
+  "versions": {
+    "A": {
+      "name": "坚守岗位",
+      "weight": 40,
+      "timeline": [
+        {"age": 7, "event": "开学", "encounter": "direct", "location": "school_classroom", "description": "王老师站在讲台上，说：'从今天起，我就是你们的班主任。'"},
+        {"age": 10, "event": "表扬", "encounter": "direct", "location": "school_classroom", "description": "王老师在全班面前表扬你：'这次考得不错，继续努力。'"},
+        {"age": 12, "event": "毕业", "encounter": "direct", "location": "school_classroom", "description": "王老师说：'你们是我带的最后一届，好好读书。'"}
+      ]
+    },
+    "B": {
+      "name": "调走升职",
+      "weight": 30,
+      "timeline": [
+        {"age": 7, "event": "开学", "encounter": "direct", "location": "school_classroom", "description": "王老师站在讲台上"},
+        {"age": 10, "event": "调走", "encounter": "heard", "description": "听说王老师调到县城学校了"}
+      ]
+    },
+    "C": {
+      "name": "因病退休",
+      "weight": 30,
+      "timeline": [
+        {"age": 7, "event": "开学", "encounter": "direct", "location": "school_classroom", "description": "王老师站在讲台上"},
+        {"age": 12, "event": "退休", "encounter": "heard", "description": "听说王老师身体不好，提前退休了"}
+      ]
+    }
+  },
+  "default_schedule": {
+    "childhood": {
+      "morning": "school_classroom",
+      "noon": "school_classroom",
+      "afternoon": "school_classroom",
+      "evening": "home",
+      "night": "home"
+    },
+    "teen": {
+      "morning": "school_classroom",
+      "noon": "school_classroom",
+      "afternoon": "school_classroom",
+      "evening": "home",
+      "night": "home"
+    }
+  },
+  "dialogues": {
+    "greeting_childhood": [
+      "好好听课，别开小差。",
+      "你最近进步了，继续保持。",
+      "有什么不懂的来问我。",
+      "放学后记得写作业。"
+    ],
+    "greeting_teen": [
+      "中考要到了，加把劲。",
+      "你有潜力，别浪费了。",
+      "读书是你们唯一的出路。"
+    ]
+  }
+}

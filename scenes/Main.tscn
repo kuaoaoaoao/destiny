@@ -1,0 +1,547 @@
+[gd_scene load_steps=14 format=3 uid="uid://main001"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/player/Player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/npc/NPC.tscn" id="3_npc"]
+[ext_resource type="PackedScene" path="res://scenes/minigames/ExamMinigame.tscn" id="4_exam"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="5_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/DialogueBox.tscn" id="6_dialogue"]
+[ext_resource type="PackedScene" path="res://scenes/ui/StatsPanel.tscn" id="7_stats"]
+[ext_resource type="PackedScene" path="res://scenes/ui/FateBook.tscn" id="8_fate"]
+[ext_resource type="PackedScene" path="res://scenes/buildings/Home.tscn" id="9_home"]
+[ext_resource type="PackedScene" path="res://scenes/buildings/School.tscn" id="10_school"]
+[ext_resource type="PackedScene" path="res://scenes/buildings/Shop.tscn" id="11_shop"]
+[ext_resource type="PackedScene" path="res://scenes/objects/decorations/Well.tscn" id="12_well"]
+[ext_resource type="PackedScene" path="res://scenes/objects/decorations/Bench.tscn" id="13_bench"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_right = 1600.0
+offset_bottom = 1200.0
+color = Color(0.4, 0.65, 0.3, 1)
+
+[node name="Path_H1" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 350.0
+offset_right = 1600.0
+offset_bottom = 370.0
+color = Color(0.72, 0.62, 0.42, 1)
+
+[node name="Path_H2" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 700.0
+offset_right = 1600.0
+offset_bottom = 720.0
+color = Color(0.72, 0.62, 0.42, 1)
+
+[node name="Path_V1" type="ColorRect" parent="."]
+offset_left = 250.0
+offset_top = 0.0
+offset_right = 270.0
+offset_bottom = 1200.0
+color = Color(0.72, 0.62, 0.42, 1)
+
+[node name="Path_V2" type="ColorRect" parent="."]
+offset_left = 800.0
+offset_top = 0.0
+offset_right = 820.0
+offset_bottom = 1200.0
+color = Color(0.72, 0.62, 0.42, 1)
+
+[node name="Path_V3" type="ColorRect" parent="."]
+offset_left = 1350.0
+offset_top = 0.0
+offset_right = 1370.0
+offset_bottom = 1200.0
+color = Color(0.72, 0.62, 0.42, 1)
+
+[node name="River" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 1050.0
+offset_right = 1600.0
+offset_bottom = 1200.0
+color = Color(0.3, 0.5, 0.7, 0.8)
+
+[node name="RiverBank" type="ColorRect" parent="."]
+offset_left = 0.0
+offset_top = 1030.0
+offset_right = 1600.0
+offset_bottom = 1050.0
+color = Color(0.6, 0.55, 0.4, 1)
+
+[node name="Pond" type="ColorRect" parent="."]
+offset_left = 1100.0
+offset_top = 150.0
+offset_right = 1300.0
+offset_bottom = 300.0
+color = Color(0.3, 0.55, 0.75, 0.9)
+
+[node name="PondBank" type="ColorRect" parent="."]
+offset_left = 1080.0
+offset_top = 130.0
+offset_right = 1320.0
+offset_bottom = 320.0
+color = Color(0.55, 0.5, 0.35, 1)
+
+[node name="GrassPatch1" type="ColorRect" parent="."]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 200.0
+color = Color(0.35, 0.6, 0.28, 1)
+
+[node name="GrassPatch2" type="ColorRect" parent="."]
+offset_left = 900.0
+offset_top = 800.0
+offset_right = 1100.0
+offset_bottom = 950.0
+color = Color(0.35, 0.6, 0.28, 1)
+
+[node name="GrassPatch3" type="ColorRect" parent="."]
+offset_left = 1400.0
+offset_top = 400.0
+offset_right = 1550.0
+offset_bottom = 550.0
+color = Color(0.35, 0.6, 0.28, 1)
+
+[node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Home" parent="Objects" instance=ExtResource("9_home")]
+position = Vector2(150, 450)
+
+[node name="HomeFence1" type="StaticBody2D" parent="Objects"]
+position = Vector2(100, 490)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/HomeFence1"]
+
+[node name="HomeFence2" type="StaticBody2D" parent="Objects"]
+position = Vector2(130, 490)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/HomeFence2"]
+
+[node name="HomeFence3" type="StaticBody2D" parent="Objects"]
+position = Vector2(160, 490)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/HomeFence3"]
+
+[node name="HomeFence4" type="StaticBody2D" parent="Objects"]
+position = Vector2(190, 490)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/HomeFence4"]
+
+[node name="HomeMailbox" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(80, 460)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/HomeMailbox"]
+
+[node name="School" parent="Objects" instance=ExtResource("10_school")]
+position = Vector2(500, 200)
+
+[node name="SchoolBench1" parent="Objects" instance=ExtResource("13_bench")]
+position = Vector2(450, 250)
+
+[node name="SchoolBench2" parent="Objects" instance=ExtResource("13_bench")]
+position = Vector2(550, 250)
+
+[node name="Shop" parent="Objects" instance=ExtResource("11_shop")]
+position = Vector2(1400, 450)
+
+[node name="ShopSign" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(1400, 420)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/ShopSign"]
+
+[node name="OldTree" type="Area2D" parent="Objects" groups=["interactable"]]
+position = Vector2(650, 600)
+
+[node name="Sprite" type="Sprite2D" parent="Objects/OldTree"]
+offset = Vector2(0, -24)
+
+[node name="Shadow" type="Sprite2D" parent="Objects/OldTree"]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 3)
+
+[node name="Label" type="Label" parent="Objects/OldTree"]
+offset_left = -20.0
+offset_top = -50.0
+offset_right = 20.0
+offset_bottom = -35.0
+text = "老槐树"
+horizontal_alignment = 1
+
+[node name="Tree1" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(100, 150)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Tree1"]
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree1"]
+
+[node name="Shadow" type="Sprite2D" parent="Objects/Tree1"]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 2)
+
+[node name="Tree2" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(200, 100)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Tree2"]
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree2"]
+
+[node name="Shadow" type="Sprite2D" parent="Objects/Tree2"]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 2)
+
+[node name="Tree3" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(350, 80)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Tree3"]
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree3"]
+
+[node name="Shadow" type="Sprite2D" parent="Objects/Tree3"]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 2)
+
+[node name="Tree4" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(900, 100)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Tree4"]
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree4"]
+
+[node name="Shadow" type="Sprite2D" parent="Objects/Tree4"]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 2)
+
+[node name="Tree5" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(1500, 150)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Tree5"]
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree5"]
+
+[node name="Shadow" type="Sprite2D" parent="Objects/Tree5"]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 2)
+
+[node name="Tree6" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(1200, 800)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Tree6"]
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree6"]
+
+[node name="Shadow" type="Sprite2D" parent="Objects/Tree6"]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 2)
+
+[node name="Tree7" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(1400, 850)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Tree7"]
+offset = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree7"]
+
+[node name="Shadow" type="Sprite2D" parent="Objects/Tree7"]
+modulate = Color(0, 0, 0, 0.2)
+position = Vector2(0, 2)
+
+[node name="Well" parent="Objects" instance=ExtResource("12_well")]
+position = Vector2(400, 600)
+
+[node name="Bench1" parent="Objects" instance=ExtResource("13_bench")]
+position = Vector2(300, 750)
+
+[node name="Bench2" parent="Objects" instance=ExtResource("13_bench")]
+position = Vector2(500, 750)
+
+[node name="Bench3" parent="Objects" instance=ExtResource("13_bench")]
+position = Vector2(700, 750)
+
+[node name="Bush1" type="StaticBody2D" parent="Objects"]
+position = Vector2(50, 300)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Bush1"]
+offset = Vector2(0, -8)
+
+[node name="Bush2" type="StaticBody2D" parent="Objects"]
+position = Vector2(250, 300)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Bush2"]
+offset = Vector2(0, -8)
+
+[node name="Bush3" type="StaticBody2D" parent="Objects"]
+position = Vector2(450, 300)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Bush3"]
+offset = Vector2(0, -8)
+
+[node name="Bush4" type="StaticBody2D" parent="Objects"]
+position = Vector2(650, 300)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Bush4"]
+offset = Vector2(0, -8)
+
+[node name="Bush5" type="StaticBody2D" parent="Objects"]
+position = Vector2(850, 300)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Bush5"]
+offset = Vector2(0, -8)
+
+[node name="Bush6" type="StaticBody2D" parent="Objects"]
+position = Vector2(1050, 300)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Bush6"]
+offset = Vector2(0, -8)
+
+[node name="Bush7" type="StaticBody2D" parent="Objects"]
+position = Vector2(1250, 300)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Bush7"]
+offset = Vector2(0, -8)
+
+[node name="Bush8" type="StaticBody2D" parent="Objects"]
+position = Vector2(1450, 300)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Bush8"]
+offset = Vector2(0, -8)
+
+[node name="Flower1" type="StaticBody2D" parent="Objects"]
+position = Vector2(120, 550)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Flower1"]
+offset = Vector2(0, -6)
+
+[node name="Flower2" type="StaticBody2D" parent="Objects"]
+position = Vector2(180, 560)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Flower2"]
+offset = Vector2(0, -6)
+
+[node name="Flower3" type="StaticBody2D" parent="Objects"]
+position = Vector2(600, 550)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Flower3"]
+offset = Vector2(0, -6)
+
+[node name="Flower4" type="StaticBody2D" parent="Objects"]
+position = Vector2(700, 560)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Flower4"]
+offset = Vector2(0, -6)
+
+[node name="Flower5" type="StaticBody2D" parent="Objects"]
+position = Vector2(800, 550)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Flower5"]
+offset = Vector2(0, -6)
+
+[node name="Flower6" type="StaticBody2D" parent="Objects"]
+position = Vector2(1300, 560)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Flower6"]
+offset = Vector2(0, -6)
+
+[node name="Flower7" type="StaticBody2D" parent="Objects"]
+position = Vector2(1500, 550)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Flower7"]
+offset = Vector2(0, -6)
+
+[node name="Lamp1" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(300, 360)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Lamp1"]
+offset = Vector2(0, -20)
+
+[node name="Light" type="PointLight2D" parent="Objects/Lamp1"]
+color = Color(1, 0.95, 0.8, 0.8)
+energy = 0.5
+texture_scale = 3.0
+
+[node name="Lamp2" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(700, 360)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Lamp2"]
+offset = Vector2(0, -20)
+
+[node name="Light" type="PointLight2D" parent="Objects/Lamp2"]
+color = Color(1, 0.95, 0.8, 0.8)
+energy = 0.5
+texture_scale = 3.0
+
+[node name="Lamp3" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(1100, 360)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Lamp3"]
+offset = Vector2(0, -20)
+
+[node name="Light" type="PointLight2D" parent="Objects/Lamp3"]
+color = Color(1, 0.95, 0.8, 0.8)
+energy = 0.5
+texture_scale = 3.0
+
+[node name="Lamp4" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(300, 710)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Lamp4"]
+offset = Vector2(0, -20)
+
+[node name="Light" type="PointLight2D" parent="Objects/Lamp4"]
+color = Color(1, 0.95, 0.8, 0.8)
+energy = 0.5
+texture_scale = 3.0
+
+[node name="Lamp5" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(700, 710)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Lamp5"]
+offset = Vector2(0, -20)
+
+[node name="Light" type="PointLight2D" parent="Objects/Lamp5"]
+color = Color(1, 0.95, 0.8, 0.8)
+energy = 0.5
+texture_scale = 3.0
+
+[node name="Lamp6" type="StaticBody2D" parent="Objects" groups=["interactable"]]
+position = Vector2(1100, 710)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Lamp6"]
+offset = Vector2(0, -20)
+
+[node name="Light" type="PointLight2D" parent="Objects/Lamp6"]
+color = Color(1, 0.95, 0.8, 0.8)
+energy = 0.5
+texture_scale = 3.0
+
+[node name="Rock1" type="StaticBody2D" parent="Objects"]
+position = Vector2(1150, 200)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Rock1"]
+offset = Vector2(0, -4)
+
+[node name="Rock2" type="StaticBody2D" parent="Objects"]
+position = Vector2(1250, 250)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Rock2"]
+offset = Vector2(0, -4)
+
+[node name="Rock3" type="StaticBody2D" parent="Objects"]
+position = Vector2(1180, 280)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite2D" parent="Objects/Rock3"]
+offset = Vector2(0, -4)
+
+[node name="NPC_Xiaogang" parent="Objects" instance=ExtResource("3_npc")]
+position = Vector2(450, 500)
+npc_id = "xiaogang"
+npc_name = "小刚"
+
+[node name="NPC_Xiaofang" parent="Objects" instance=ExtResource("3_npc")]
+position = Vector2(350, 400)
+npc_id = "xiaofang"
+npc_name = "小芳"
+
+[node name="NPC_Dazhuang" parent="Objects" instance=ExtResource("3_npc")]
+position = Vector2(1350, 500)
+npc_id = "dazhuang"
+npc_name = "大壮"
+
+[node name="Player" parent="Objects" instance=ExtResource("2_player")]
+position = Vector2(800, 600)
+
+[node name="HUD" parent="." instance=ExtResource("5_hud")]
+
+[node name="DialogueBox" parent="." instance=ExtResource("6_dialogue")]
+
+[node name="StatsPanel" parent="." instance=ExtResource("7_stats")]
+visible = false
+
+[node name="FateBook" parent="." instance=ExtResource("8_fate")]
+visible = false
+
+[node name="ExamMinigame" parent="." instance=ExtResource("4_exam")]

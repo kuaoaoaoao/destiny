@@ -1,0 +1,191 @@
+[gd_scene load_steps=8 format=3 uid="uid://school001"]
+
+[ext_resource type="Script" path="res://scripts/world/IndoorScene.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_desk1"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_desk2"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_board"]
+size = Vector2(120, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exit"]
+size = Vector2(40, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teacher"]
+size = Vector2(24, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(600, 16)
+
+[node name="School" type="Node2D"]
+script = ExtResource("1_script")
+scene_name = "学校"
+
+[node name="Floor" type="ColorRect" parent="."]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 560.0
+offset_bottom = 460.0
+color = Color(0.9, 0.88, 0.85, 1)
+
+[node name="WallTop" type="ColorRect" parent="."]
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 40.0
+color = Color(0.8, 0.78, 0.75, 1)
+
+[node name="WallBottom" type="ColorRect" parent="."]
+offset_left = 40.0
+offset_top = 460.0
+offset_right = 560.0
+offset_bottom = 480.0
+color = Color(0.8, 0.78, 0.75, 1)
+
+[node name="WallLeft" type="ColorRect" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 480.0
+color = Color(0.8, 0.78, 0.75, 1)
+
+[node name="WallRight" type="ColorRect" parent="."]
+offset_left = 560.0
+offset_top = 20.0
+offset_right = 580.0
+offset_bottom = 480.0
+color = Color(0.8, 0.78, 0.75, 1)
+
+[node name="Blackboard" type="ColorRect" parent="."]
+offset_left = 140.0
+offset_top = 60.0
+offset_right = 460.0
+offset_bottom = 120.0
+color = Color(0.2, 0.3, 0.2, 1)
+
+[node name="TeacherDesk" type="StaticBody2D" parent="."]
+position = Vector2(300, 180)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="ColorRect" parent="TeacherDesk"]
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+color = Color(0.6, 0.45, 0.3, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeacherDesk"]
+shape = SubResource("RectangleShape2D_teacher")
+
+[node name="Desk1" type="StaticBody2D" parent="."]
+position = Vector2(150, 280)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="ColorRect" parent="Desk1"]
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+color = Color(0.7, 0.55, 0.4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk1"]
+shape = SubResource("RectangleShape2D_desk1")
+
+[node name="Desk2" type="StaticBody2D" parent="."]
+position = Vector2(250, 280)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="ColorRect" parent="Desk2"]
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+color = Color(0.7, 0.55, 0.4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk2"]
+shape = SubResource("RectangleShape2D_desk2")
+
+[node name="Desk3" type="StaticBody2D" parent="."]
+position = Vector2(350, 280)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="ColorRect" parent="Desk3"]
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+color = Color(0.7, 0.55, 0.4, 1)
+
+[node name="Desk4" type="StaticBody2D" parent="."]
+position = Vector2(150, 350)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="ColorRect" parent="Desk4"]
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+color = Color(0.7, 0.55, 0.4, 1)
+
+[node name="Desk5" type="StaticBody2D" parent="."]
+position = Vector2(250, 350)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="ColorRect" parent="Desk5"]
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+color = Color(0.7, 0.55, 0.4, 1)
+
+[node name="Desk6" type="StaticBody2D" parent="."]
+position = Vector2(350, 350)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="ColorRect" parent="Desk6"]
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+color = Color(0.7, 0.55, 0.4, 1)
+
+[node name="ExitArea" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(300, 470)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+shape = SubResource("RectangleShape2D_exit")
+
+[node name="Label" type="Label" parent="ExitArea"]
+offset_left = -20.0
+offset_top = -15.0
+offset_right = 20.0
+offset_bottom = 0.0
+text = "出门"
+horizontal_alignment = 1
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(300, 400)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+offset = Vector2(0, -24)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0

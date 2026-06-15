@@ -1,0 +1,188 @@
+{
+  "npc_id": "xiaofang",
+  "name": "小芳",
+  "gender": "female",
+  "archetype": "childhood_sweetheart",
+  "description": "乖巧、青梅竹马、漂亮。扎马尾，笑起来有酒窝。你的第一个心动。",
+  "childhood_sprite": "res://assets/sprites/npc/xiaofang_child.png",
+  "teen_sprite": "res://assets/sprites/npc/xiaofang_teen.png",
+  "adult_sprite": "res://assets/sprites/npc/xiaofang_adult.png",
+  "versions": {
+    "A": {
+      "name": "平凡主妇",
+      "weight": 35,
+      "description": "嫁到邻县，成了平凡的主妇。平淡但安稳。",
+      "timeline": [
+        {
+          "age": 7,
+          "event": "校门口相遇",
+          "encounter": "direct",
+          "location": "school_gate",
+          "description": "扎着马尾，冲你笑了一下，露出两个酒窝"
+        },
+        {
+          "age": 10,
+          "event": "一起放学",
+          "encounter": "direct",
+          "location": "village_path",
+          "description": "沿着田埂走回去，夕阳把你们的影子拉得很长"
+        },
+        {
+          "age": 15,
+          "event": "考上高中",
+          "encounter": "heard",
+          "description": "听说她考上了县里的高中"
+        },
+        {
+          "age": 18,
+          "event": "考上大学",
+          "encounter": "heard",
+          "description": "听说她考上了不错的大学"
+        },
+        {
+          "age": 25,
+          "event": "嫁人",
+          "encounter": "heard",
+          "description": "听说她嫁到了邻县，对方是个公务员"
+        },
+        {
+          "age": 30,
+          "event": "偶遇",
+          "encounter": "direct",
+          "location": "town_square",
+          "description": "回娘家时偶遇，她抱着孩子，笑着说：'好久不见。'"
+        }
+      ]
+    },
+    "B": {
+      "name": "远嫁他乡",
+      "weight": 25,
+      "description": "你没表白，她远嫁他乡。多年后重逢，物是人非。",
+      "timeline": [
+        {
+          "age": 7,
+          "event": "校门口相遇",
+          "encounter": "direct",
+          "location": "school_gate",
+          "description": "扎着马尾，冲你笑了一下"
+        },
+        {
+          "age": 18,
+          "event": "分别",
+          "encounter": "direct",
+          "location": "station",
+          "description": "在车站遇到，她要去远方上大学。你说不出那句话。"
+        },
+        {
+          "age": 25,
+          "event": "远嫁",
+          "encounter": "heard",
+          "description": "听说她嫁到了很远的地方"
+        },
+        {
+          "age": 35,
+          "event": "重逢",
+          "encounter": "direct",
+          "location": "town_square",
+          "description": "多年后在镇上重逢。她老了一点，但笑起来还是有酒窝。你们聊了很久，但有些话，再也说不出口了。"
+        }
+      ]
+    },
+    "C": {
+      "name": "独立女教师",
+      "weight": 25,
+      "description": "考上师范，回镇当老师，独立未婚。",
+      "timeline": [
+        {
+          "age": 7,
+          "event": "校门口相遇",
+          "encounter": "direct",
+          "location": "school_gate",
+          "description": "扎着马尾，冲你笑了一下"
+        },
+        {
+          "age": 18,
+          "event": "考上师范",
+          "encounter": "heard",
+          "description": "听说她考上了师范大学"
+        },
+        {
+          "age": 22,
+          "event": "回镇当老师",
+          "encounter": "direct",
+          "location": "school",
+          "description": "回到镇上的小学当了老师，站在讲台上，像当年的王老师"
+        },
+        {
+          "age": 30,
+          "event": "独立生活",
+          "encounter": "direct",
+          "location": "school",
+          "description": "一直没结婚，但活得自在。她说：'我一个人挺好的。'"
+        }
+      ]
+    },
+    "D": {
+      "name": "嫁错人",
+      "weight": 15,
+      "description": "嫁错人，遭遇家暴，离婚回乡。",
+      "timeline": [
+        {
+          "age": 7,
+          "event": "校门口相遇",
+          "encounter": "direct",
+          "location": "school_gate",
+          "description": "扎着马尾，冲你笑了一下"
+        },
+        {
+          "age": 22,
+          "event": "嫁人",
+          "encounter": "heard",
+          "description": "听说她嫁人了，对方看起来不错"
+        },
+        {
+          "age": 28,
+          "event": "离婚回乡",
+          "encounter": "direct",
+          "location": "town_gate",
+          "description": "你看到她拖着行李箱回来，瘦了很多，眼里没有了光。她什么都没说，只是笑了笑。"
+        },
+        {
+          "age": 35,
+          "event": "重新开始",
+          "encounter": "direct",
+          "location": "town_square",
+          "description": "她在镇上开了个小店，一个人撑着。她说：'日子总要过下去。'"
+        }
+      ]
+    }
+  },
+  "default_schedule": {
+    "childhood": {
+      "morning": "home",
+      "noon": "school_classroom",
+      "afternoon": "school_gate",
+      "evening": "home",
+      "night": "home"
+    },
+    "teen": {
+      "morning": "school_classroom",
+      "noon": "school_library",
+      "afternoon": "school_gate",
+      "evening": "home",
+      "night": "home"
+    }
+  },
+  "dialogues": {
+    "greeting_childhood": [
+      "一起走吗？",
+      "今天作业好多啊。",
+      "你喜欢什么课？我喜欢语文。"
+    ],
+    "greeting_teen": [
+      "你最近在看什么书？",
+      "高考压力好大。",
+      "你想考什么大学？"
+    ]
+  }
+}

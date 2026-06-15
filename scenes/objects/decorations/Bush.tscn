@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bush001"]
+
+[ext_resource type="Script" path="res://scripts/world/Decoration.gd" id="1_script"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_collision"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shadow"]
+size = Vector2(16, 4)
+
+[node name="Bush" type="StaticBody2D" groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_script")
+decoration_name = "灌木"
+decoration_type = "bush"
+has_collision = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_collision")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.15)
+position = Vector2(0, 2)

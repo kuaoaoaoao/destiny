@@ -1,0 +1,109 @@
+{
+  "backgrounds": {
+    "rural_poor": {
+      "name": "农村贫困家庭",
+      "weight": 20,
+      "description": "土坯房，漏雨的屋顶，爷爷奶奶留守。爸妈在外地打工，一年回来一次。",
+      "initial_stats": {
+        "money": 10,
+        "psychology": 40,
+        "health": 45,
+        "social": 35,
+        "education": 10,
+        "family": 35
+      },
+      "home_scene": "home_poor",
+      "parents": {
+        "father": {"status": "migrant_worker", "present": false, "description": "在广东工地干活，过年才回来"},
+        "mother": {"status": "migrant_worker", "present": false, "description": "在浙江服装厂，每个月寄钱回来"}
+      },
+      "core_conflict": "我连活着都费力，谈什么梦想？",
+      "childhood_narrative": "你出生在一个漏雨的土坯房里。爷爷奶奶带你长大，爸妈的照片贴在墙上，但人影很少出现。",
+      "starting_flags": ["family_poor", "parents_absent"]
+    },
+    "rural_normal": {
+      "name": "农村普通家庭",
+      "weight": 35,
+      "description": "自建房，有院子。爸妈在或外出打工，日子紧巴巴但不缺吃穿。",
+      "initial_stats": {
+        "money": 30,
+        "psychology": 50,
+        "health": 55,
+        "social": 50,
+        "education": 20,
+        "family": 50
+      },
+      "home_scene": "home_normal",
+      "parents": {
+        "father": {"status": "migrant_worker", "present": false, "description": "在省城工地，每月回来一次"},
+        "mother": {"status": "farmer", "present": true, "description": "在家种地、照顾你"}
+      },
+      "core_conflict": "爸妈说好好读书就能走出去，可我连读书的力气都没有。",
+      "childhood_narrative": "你出生在一个普通的自建房里。妈妈在家种地，爸爸在省城打工。日子不算富裕，但院子里总有你的笑声。",
+      "starting_flags": ["family_normal"]
+    },
+    "town_normal": {
+      "name": "城镇普通家庭",
+      "weight": 25,
+      "description": "镇上租房或自有小房。爸妈有稳定工作，日子过得去。",
+      "initial_stats": {
+        "money": 45,
+        "psychology": 55,
+        "health": 55,
+        "social": 55,
+        "education": 30,
+        "family": 55
+      },
+      "home_scene": "home_town",
+      "parents": {
+        "father": {"status": "worker", "present": true, "description": "在镇上工厂上班"},
+        "mother": {"status": "shopkeeper", "present": true, "description": "在镇上开小店或打工"}
+      },
+      "core_conflict": "我不愁吃穿，但也不知道自己想要什么。",
+      "childhood_narrative": "你出生在镇上的一间小房子里。爸妈都有工作，日子过得去。你是镇上的孩子，和邻居家的小孩一起长大。",
+      "starting_flags": ["family_town"]
+    },
+    "urban_middle": {
+      "name": "城市中产家庭",
+      "weight": 15,
+      "description": "城里有房有车，假期回乡。教育重视，资源丰富。",
+      "initial_stats": {
+        "money": 65,
+        "psychology": 55,
+        "health": 60,
+        "social": 50,
+        "education": 45,
+        "family": 55
+      },
+      "home_scene": "home_urban",
+      "parents": {
+        "father": {"status": "professional", "present": true, "description": "公司中层，忙但稳定"},
+        "mother": {"status": "teacher", "present": true, "description": "小学老师，重视教育"}
+      },
+      "core_conflict": "所有人都说我的人生应该很好，可我总觉得缺了什么。",
+      "childhood_narrative": "你出生在城市的一套商品房里。爸妈都有体面的工作，你从小上最好的学校。但每到暑假，爸妈会带你回乡下老家——那是另一个世界。",
+      "starting_flags": ["family_urban", "parents_present"]
+    },
+    "urban_rich": {
+      "name": "富裕家庭",
+      "weight": 5,
+      "description": "城里有大房，乡下有祖宅。不缺钱，但父母忙，陪伴少。",
+      "initial_stats": {
+        "money": 85,
+        "psychology": 45,
+        "health": 60,
+        "social": 40,
+        "education": 50,
+        "family": 45
+      },
+      "home_scene": "home_rich",
+      "parents": {
+        "father": {"status": "businessman", "present": false, "description": "做生意，很少回家"},
+        "mother": {"status": "housewife", "present": true, "description": "全职太太，但社交繁忙"}
+      },
+      "core_conflict": "我什么都有，除了陪伴。",
+      "childhood_narrative": "你出生在城市的一栋大房子里。爸爸做生意，很少回家。妈妈是全职太太，但总有忙不完的社交。你有最好的玩具，但最想要的是有人陪你玩。",
+      "starting_flags": ["family_rich", "parents_busy"]
+    }
+  }
+}

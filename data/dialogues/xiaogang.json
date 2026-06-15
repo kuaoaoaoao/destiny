@@ -1,0 +1,55 @@
+{
+	"npc_id": "xiaogang",
+	"npc_name": "小刚",
+	"dialogues": {
+		"childhood": {
+			"age_range": [7, 12],
+			"text": "嘿！今天一起玩吗？",
+			"options": [
+				{"text": "好啊！", "effects": {"social": 5, "psychology": 5}},
+				{"text": "我先看看", "effects": {"psychology": 3}},
+				{"text": "我要写作业", "effects": {"education": 3}}
+			]
+		},
+		"teen": {
+			"age_range": [12, 18],
+			"text": "高中了，要加油啊！",
+			"options": [
+				{"text": "一起努力！", "effects": {"education": 5, "social": 5}},
+				{"text": "走一步看一步", "effects": {"psychology": 3}},
+				{"text": "好累啊...", "effects": {"psychology": -3}}
+			]
+		},
+		"adult": {
+			"age_range": [18, 100],
+			"text": "好久不见！最近怎么样？",
+			"options": [
+				{"text": "还行吧", "effects": {"social": 3}},
+				{"text": "有点累", "effects": {"psychology": -3}},
+				{"text": "一起喝一杯", "effects": {"social": 8, "money": -5}}
+			]
+		},
+		"rainy": {
+			"text": "下雨了，我们去避避雨吧。",
+			"options": [
+				{"text": "好的", "effects": {"psychology": 3}},
+				{"text": "我喜欢雨天", "effects": {"psychology": 5}}
+			]
+		},
+		"morning": {
+			"text": "早上好！今天有什么计划？",
+			"options": [
+				{"text": "去上学", "effects": {"education": 3}},
+				{"text": "想出去玩", "effects": {"psychology": 3}},
+				{"text": "还没想好", "effects": {}}
+			]
+		},
+		"evening": {
+			"text": "天黑了，该回家了。",
+			"options": [
+				{"text": "是啊", "effects": {"family": 3}},
+				{"text": "再玩一会儿", "effects": {"psychology": 3, "family": -3}}
+			]
+		}
+	}
+}

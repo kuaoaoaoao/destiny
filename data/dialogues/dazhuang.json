@@ -1,0 +1,45 @@
+{
+	"npc_id": "dazhuang",
+	"npc_name": "大壮",
+	"dialogues": {
+		"childhood": {
+			"age_range": [7, 18],
+			"text": "欢迎光临！想买点什么？",
+			"options": [
+				{"text": "买个冰棍", "effects": {"money": -5, "psychology": 5}},
+				{"text": "就看看", "effects": {}},
+				{"text": "今天有什么好吃的？", "effects": {"social": 3}}
+			]
+		},
+		"adult": {
+			"age_range": [18, 100],
+			"text": "来喝一杯？聊聊近况。",
+			"options": [
+				{"text": "好啊", "effects": {"social": 8, "money": -10}},
+				{"text": "改天吧", "effects": {}},
+				{"text": "最近生意怎么样？", "effects": {"social": 5}}
+			]
+		},
+		"rainy": {
+			"text": "下雨天生意不好啊...",
+			"options": [
+				{"text": "会好起来的", "effects": {"social": 5}},
+				{"text": "买点东西支持你", "effects": {"money": -10, "social": 8}}
+			]
+		},
+		"morning": {
+			"text": "早啊！刚开门，来看看新货！",
+			"options": [
+				{"text": "好的", "effects": {"social": 3}},
+				{"text": "我赶着上学", "effects": {}}
+			]
+		},
+		"evening": {
+			"text": "快打烊了，有什么需要吗？",
+			"options": [
+				{"text": "买点零食", "effects": {"money": -5, "psychology": 3}},
+				{"text": "没有了", "effects": {}}
+			]
+		}
+	}
+}
